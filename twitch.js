@@ -98,6 +98,7 @@ function HideTooltip() {
 
 
 function ShowNotification(image, display_name, name, content) {
+    /*
     chrome.notifications.create(name, {
         type: 'basic',
         iconUrl: image,
@@ -108,11 +109,8 @@ function ShowNotification(image, display_name, name, content) {
             chrome.notifications.clear(notificationId, null);
         }, 3000);
     });
+    */
 }
-
-chrome.notifications.onClicked.addListener(function (notificationId) {
-    window.open('twitch://http://www.twitch.tv/' + notificationId, '_self');
-});
 
 
 
