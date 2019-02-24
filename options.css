@@ -1,0 +1,79 @@
+body {
+	background-image: url(https://i.imgur.com/VypccXJ.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow-x: hidden;
+}
+.outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+
+}
+
+#head {
+	background-color: rgba(15,15,15,0.8);
+	width: 640px;
+	height: 40px;
+	margin: 5px auto;
+	text-align: center;
+	overflow: hidden;
+}
+.searchBar {
+	background-color: rgba(0,0,0,0);
+	width: 630px;
+	height: 40px;
+	margin: 0 auto;
+	outline: 0;
+	transition: all 1s;
+	border-style: none;
+	text-align: left;
+}
+.searchBar:Hover {
+	background-color: rgba(0,0,0,0.1);
+	transition: all 1s;
+}
+.searchBar:focus {
+	background-color: rgba(0,0,0,0.3);
+	transition: all 1s
+}
+.searchForm {
+	width: 600px;
+	float: left;
+}
+
+#wrapper {
+	color: rgba(170,170,170,1);
+	background-color: rgba(15, 15, 15, 0.8);
+	width: 640px;
+	margin: 5px;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+input {
+	padding-left: 10px;
+	font-size: 20px;
+	color: white;
+}
+input[type=text] {
+	color: rgba(170,170,170,1);
+	font-family: 'Lato';
+}
+
+span{
+	font-size:15px;
+	color: rgba(170,170,170,1);
+	font-family: 'Lato';
+	font-weight: bold;
+}

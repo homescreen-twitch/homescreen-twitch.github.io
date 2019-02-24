@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Homescreen Options</title>
+    <meta http-equiv="Cache-control" content="public">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="options.css">
+    <script src="/jquery-3.3.1.min.js"></script>
+    <script src='/options.js'></script>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="middle">
+                <div id="wrapper">
+                    <span>Background:</span>
+                    <input class="searchBar" type="text" id="backgroundURL" placeholder="Enter Background URL">
+                    <span>9gag to cute:</span> <input type="checkbox" id="cuteCheckbox">
+                    </div>
+                    <div>
+            <div id="wrapper" style="float: left">
+                <div id="headStreams">
+                    Streams:
+                    <span>
+                        <table id="streamsTable"></table>
+                    </span>
+                    <div id="addStream">
+                        <input class="searchBar" type="text" id="newStream" placeholder="Add Stream">
+                    </div>
+                </div>
+            </div>
+            <div id="wrapper" style="float: left">
+                Gameplay Streams:
+                <div id="headStreamsGameplay">
+                    <span>
+                        <table id="streamsTableGameplay"></table>
+                    </span>
+                    <div id="addStream">
+                        <input class="searchBar" type="text" id="newStreamGameplay" placeholder="Add Stream">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

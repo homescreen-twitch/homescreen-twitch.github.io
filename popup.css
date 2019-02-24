@@ -1,0 +1,39 @@
+body {
+	color: rgba(170,170,170,1);
+    font-family: 'Lato';
+    font-weight: bold;
+
+	background-color: rgba(15, 15, 15, 0.8);
+}
+
+/* unvisited link */
+a:link {
+    color: rgba(170,170,170,1);
+    font-family: 'Lato';
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: rgba(170,170,170,1);
+    font-family: 'Lato';
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: rgba(170,170,170,1);
+    font-family: 'Lato';
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: rgba(170,170,170,1);
+    font-family: 'Lato';
+    font-weight: bold;
+    text-decoration: none;
+}

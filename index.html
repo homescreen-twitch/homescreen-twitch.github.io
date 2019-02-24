@@ -1,2 +1,45 @@
-Hello World
- test
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<script src="/jquery-3.3.1.min.js"></script>
+	<script src="/twitch.js"></script>
+	<title>Home</title>
+	<meta http-equiv="Cache-control" content="public">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div id="tooltip" class="tooltip">
+	</div>
+	<div class="outer">
+		<div class="middle">
+			<div id="clock">
+				<span id="timeText"></span>
+			</div>
+			<div id="head">
+				<form class="searchForm" method="get" action="https://google.com/search">
+					<input class="searchBar" type="Search" name="q" placeholder="Search..." />
+				</form>
+				<div id="reload">
+					<a href="#"><img id="reloadButton" src="Icons/reload.png" height="40" width="40" style="margin-top: 0px; margin-left: 0px;"></a>
+				</div>
+			</div>
+		<div id="wrapper">
+			<a href="https://www.9gag.com" target="_blank"><img src="Icons/9gag.png"></a>
+			<a href="https://www.reddit.com/" target="_blank"><img src="Icons/reddit.png"></a>
+			<a href="https://www.facebook.com/" target="_blank"><img src="Icons/fb.png"></a>
+			<a href="https://www.feedly.com" target="_blank"><img src="Icons/feedly.png"></a>
+			<a href="https://www.twitch.tv/directory" target="_blank"><img src="Icons/twitch.png"></a>
+			<a href="https://www.youtube.com/" target="_blank"><img src="Icons/youtube.png"></a>
+		</div>
+		<div id="twitch" style="visibility: hidden">
+		</div>
+
+		<div id="twitchGameplay" style="visibility: hidden">
+		</div>
+	</div>
+</div>
+</body>
+</html>
