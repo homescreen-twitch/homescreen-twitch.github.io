@@ -39,12 +39,14 @@ $(document).ready(function () {
     });
 
     $('#cuteCheckbox').change(function () {
-        chrome.storage.local.set({ '9gagCute': $(this).is(':checked') });
+        //chrome.storage.local.set({ '9gagCute': $(this).is(':checked') });
+        window.localStorage.setItem('9gagCute', $(this).is(':checked').toString());
     });
 
     $('#backgroundURL').change(function () {
         $("body").css("background-image", "url(" + $(this).val() + ")");
-        chrome.storage.local.set({ 'backgroundURL': $(this).val() });
+        //chrome.storage.local.set({ 'backgroundURL': $(this).val() });
+        window.localStorage.setItem('backgroundURL', $(this).val());
     });
 
 });
@@ -103,10 +105,9 @@ var streams = [];
 var streamsGameplay = [];
 
 function LoadOptions() {
-    return;
-    chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
+    //chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
 
-        streamsString = result['streams'].join("&id=");
+        streamsString = window.localStorage.getItem('streams').split(',');
         $.ajax({
             url: 'https://api.twitch.tv/helix/users?id=' + streamsString,
             type: 'GET',
@@ -127,7 +128,7 @@ function LoadOptions() {
             },
         });
 
-        streamsString = result['streamsGameplay'].join("&id=");
+        streamsString = window.localStorage.getItem('streamsGameplay').split(',');
         $.ajax({
             url: 'https://api.twitch.tv/helix/users?id=' + streamsString,
             type: 'GET',
@@ -148,15 +149,16 @@ function LoadOptions() {
             },
         });
 
-        if (result['9gagCute']) {
+        if (window.localStorage.getItem('9gagCute') == 'true') {
             $('#cuteCheckbox').prop("checked", true);
         }
 
-        if (result['backgroundURL'] && result['backgroundURL'] != "") {
-            $('#backgroundURL').val(result['backgroundURL']);
-            $("body").css("background-image", "url(" + result['backgroundURL'] + ")");
+        var bgresult = window.localStorage.getItem('backgroundURL');
+        if (bgresult && bgresult != "") {
+            $('#backgroundURL').val(bgresult);
+            $("body").css("background-image", "url(" + bgresult + ")");
         }
-    });
+    //});
 }
 
 function SaveStreams() {
