@@ -107,9 +107,9 @@ var streamsGameplay = [];
 function LoadOptions() {
     //chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
 
-        streamsString = window.localStorage.getItem('streams');
+        streamsString = window.localStorage.getItem('streams').split(',');
         $.ajax({
-            url: 'https://api.twitch.tv/helix/users?id=' + streamsString,
+            url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
             type: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -128,9 +128,9 @@ function LoadOptions() {
             },
         });
 
-        streamsString = window.localStorage.getItem('streamsGameplay');
+        streamsString = window.localStorage.getItem('streamsGameplay').split(',');
         $.ajax({
-            url: 'https://api.twitch.tv/helix/users?id=' + streamsString,
+            url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
             type: 'GET',
             dataType: 'json',
             success: function (response) {
