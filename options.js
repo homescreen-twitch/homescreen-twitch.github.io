@@ -174,11 +174,13 @@ function ImportStreams(streams, gameplay) {
 }
 
 function ImportStreamIds(streamIds, gameplay) {
-    var tmpStreams = streamIds.split(",");
+    //var tmpStreams = streamIds.split(",");
     if (gameplay)
-        chrome.storage.local.set({ 'streamsGameplay': tmpStreams });
+        //chrome.storage.local.set({ 'streamsGameplay': tmpStreams });
+        window.localStorage.setItem('streamsGameplay', streamIds);
     else
-        chrome.storage.local.set({ 'streams': tmpStreams });
+        //chrome.storage.local.set({ 'streams': tmpStreams });
+        window.localStorage.setItem('streams', streamIds);
 
     LoadOptions();
 }

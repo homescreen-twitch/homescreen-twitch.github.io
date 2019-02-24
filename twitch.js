@@ -117,10 +117,10 @@ chrome.notifications.onClicked.addListener(function (notificationId) {
 
 
 function LoadOptions() {
-    chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
-        streamsString = result['streams'].join("&id=");
+    //chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
+        streamsString = window.localStorage.getItem('streams').split(',');
         $.ajax({
-            url: 'https://api.twitch.tv/helix/users?id=' + streamsString,
+            url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
             type: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -135,9 +135,9 @@ function LoadOptions() {
             },
         });
 
-        streamsString = result['streamsGameplay'].join("&id=");
+        streamsString = window.localStorage.getItem('streamsGameplay').split(',');
         $.ajax({
-            url: 'https://api.twitch.tv/helix/users?id=' + streamsString,
+            url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
             type: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -152,14 +152,15 @@ function LoadOptions() {
             },
         });
 
-        if (result['9gagCute']) {
+        if (window.localStorage.getItem('9gagCute') == 'true') {
             $('a[href$="https://www.9gag.com"]').attr("href", "https://www.9gag.com/cute")
         }
 
-        if (result['backgroundURL'] && result['backgroundURL'] != "") {
+        var bgresult = window.localStorage.getItem('backgroundURL');
+        if (bgresult && bgresult != "") {
             $("body").css("background-image", "url(" + result['backgroundURL'] + ")");
         }
-    });
+    //});
 }
 
 
