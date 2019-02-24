@@ -159,8 +159,10 @@ function LoadOptions() {
 }
 
 function SaveStreams() {
-    chrome.storage.local.set({ 'streams': streams });
-    chrome.storage.local.set({ 'streamsGameplay': streamsGameplay });
+    //chrome.storage.local.set({ 'streams': streams });
+    //chrome.storage.local.set({ 'streamsGameplay': streamsGameplay });
+    window.localStorage.setItem('streams', streams.toString());
+    window.localStorage.setItem('streamsGameplay', streamsGameplay.toString());
 }
 
 function ImportStreams(streams, gameplay) {
