@@ -103,6 +103,7 @@ var streams = [];
 var streamsGameplay = [];
 
 function LoadOptions() {
+    return;
     chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
 
         streamsString = result['streams'].join("&id=");
