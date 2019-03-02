@@ -98,7 +98,7 @@ function HideTooltip() {
 
 
 function ShowNotification(image, display_name, name, content) {
-    window.webkitNotifications.createNotification(image, display_name, content);
+    window.ShowNotification(image, display_name, content);
     /*
     chrome.notifications.create(name, {
         type: 'basic',
@@ -116,10 +116,7 @@ function ShowNotification(image, display_name, name, content) {
 
 
 function LoadOptions() {
-    if (window.webkitNotifications.checkPermission() == 0) {
-    } else {
-        window.webkitNotifications.requestPermission();
-    }
+    window.Notifications.requestPermission();
 
     streamsString = window.localStorage.getItem('streams').split(',');
     $.ajax({
