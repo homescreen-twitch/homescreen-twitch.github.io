@@ -116,7 +116,7 @@ function ShowNotification(image, display_name, name, content) {
 
 
 function LoadOptions() {
-    window.Notifications.requestPermission();
+    window.Notification.requestPermission();
 
     streamsString = window.localStorage.getItem('streams').split(',');
     $.ajax({
