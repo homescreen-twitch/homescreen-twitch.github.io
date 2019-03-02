@@ -97,7 +97,7 @@ function HideTooltip() {
 
 
 
-function ShowNotification(image, display_name, name, content) {
+function ShowNewNotification(image, display_name, name, content) {
     window.ShowNotification(image, display_name, content);
     /*
     chrome.notifications.create(name, {
@@ -266,7 +266,7 @@ function UpdateStreamsResponse(twitchResp) {
                         streamData = requestStreamsGameplay[item];
                     else
                         streamData = requestStreams[item];
-                    ShowNotification(streamData['image'], streamData['display_name'], streamData['name'], typeof gamesCache[item['game_id']] == 'undefined' ? item['game_id'] : gamesCache[item['game_id']]);
+                    ShowNewNotification(streamData['image'], streamData['display_name'], streamData['name'], typeof gamesCache[item['game_id']] == 'undefined' ? item['game_id'] : gamesCache[item['game_id']]);
 
                 }
             });
