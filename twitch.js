@@ -98,7 +98,10 @@ function HideTooltip() {
 
 
 function ShowNewNotification(image, display_name, name, content) {
-    window.ShowNotification(image, display_name, content);
+    new Notification(display_name, {
+        body: content,
+        icon: image
+      });
     /*
     chrome.notifications.create(name, {
         type: 'basic',
