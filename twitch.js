@@ -156,7 +156,7 @@ function LoadOptions() {
 
         var bgresult = window.localStorage.getItem('backgroundURL');
         if (bgresult && bgresult != "") {
-            $("body").css("background-image", "url(" + result['backgroundURL'] + ")");
+            $("body").css("background-image", "url(" + bgresult + ")");
         }
     //});
 }
