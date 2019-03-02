@@ -98,6 +98,7 @@ function HideTooltip() {
 
 
 function ShowNotification(image, display_name, name, content) {
+    window.webkitNotifications.createNotification(image, display_name, content);
     /*
     chrome.notifications.create(name, {
         type: 'basic',
@@ -115,50 +116,53 @@ function ShowNotification(image, display_name, name, content) {
 
 
 function LoadOptions() {
-    //chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
-        streamsString = window.localStorage.getItem('streams').split(',');
-        $.ajax({
-            url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
-            type: 'GET',
-            dataType: 'json',
-            success: function (response) {
-                $.each(response['data'], function (i, item) {
-                    requestStreams[item['id']] = { name: item['login'], display_name: item['display_name'], image: item['profile_image_url'] };
-                });
+    if (window.webkitNotifications.checkPermission() == 0) {
+    } else {
+        window.webkitNotifications.requestPermission();
+    }
 
-                UpdateStreams();
-            },
-            headers: {
-                'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
-            },
-        });
+    streamsString = window.localStorage.getItem('streams').split(',');
+    $.ajax({
+        url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+            $.each(response['data'], function (i, item) {
+                requestStreams[item['id']] = { name: item['login'], display_name: item['display_name'], image: item['profile_image_url'] };
+            });
 
-        streamsString = window.localStorage.getItem('streamsGameplay').split(',');
-        $.ajax({
-            url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
-            type: 'GET',
-            dataType: 'json',
-            success: function (response) {
-                $.each(response['data'], function (i, item) {
-                    requestStreamsGameplay[item['id']] = { name: item['login'], display_name: item['display_name'], image: item['profile_image_url'] };
-                });
+            UpdateStreams();
+        },
+        headers: {
+            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+        },
+    });
 
-                UpdateStreamsGameplay();
-            },
-            headers: {
-                'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
-            },
-        });
+    streamsString = window.localStorage.getItem('streamsGameplay').split(',');
+    $.ajax({
+        url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+            $.each(response['data'], function (i, item) {
+                requestStreamsGameplay[item['id']] = { name: item['login'], display_name: item['display_name'], image: item['profile_image_url'] };
+            });
 
-        if (window.localStorage.getItem('9gagCute') == 'true') {
-            $('a[href$="https://www.9gag.com"]').attr("href", "https://www.9gag.com/cute")
-        }
+            UpdateStreamsGameplay();
+        },
+        headers: {
+            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+        },
+    });
 
-        var bgresult = window.localStorage.getItem('backgroundURL');
-        if (bgresult && bgresult != "") {
-            $("body").css("background-image", "url(" + bgresult + ")");
-        }
-    //});
+    if (window.localStorage.getItem('9gagCute') == 'true') {
+        $('a[href$="https://www.9gag.com"]').attr("href", "https://www.9gag.com/cute")
+    }
+
+    var bgresult = window.localStorage.getItem('backgroundURL');
+    if (bgresult && bgresult != "") {
+        $("body").css("background-image", "url(" + bgresult + ")");
+    }
 }
 
 
@@ -257,7 +261,7 @@ function UpdateStreamsResponse(twitchResp) {
         var gamesPromise = UpdateGamesCache(newGames);
         gamesPromise.then(function (val) {
             var streamData = null;
-            
+
             $.each(tmpNames, function (x, item) {
                 if (streamsOnline.indexOf(item) == -1) {
                     //new stream, display notification
