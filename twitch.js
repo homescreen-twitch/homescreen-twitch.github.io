@@ -98,6 +98,8 @@ function HideTooltip() {
 
 
 function ShowNewNotification(image, display_name, name, content) {
+    return;
+    
     new Notification(display_name, {
         body: content,
         icon: image
