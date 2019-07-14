@@ -1,0 +1,200 @@
+body {
+	/*background-image: url(bg/calm.jpg);*/
+	background-image: url(https://i.imgur.com/VypccXJ.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow-y: hidden;
+	overflow-x: hidden;
+
+}
+form {
+	margin: 0px auto;
+	display: block;
+	vertical-align: middle;
+	line-height: 40px;
+}
+iframe {
+	opacity: 0.8;
+	transition: all 1s;
+}
+iframe:hover {
+	opacity: 1;
+	transition: all 1s;
+}
+.outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+
+}
+#clock {
+	background-color: rgba(15,15,15,0.8);
+	width: 640px;
+	height: 126px;
+	margin: 5px auto;
+	text-align:center;
+	overflow: hidden;
+}
+
+#head {
+	background-color: rgba(15,15,15,0.8);
+	width: 640px;
+	height: 40px;
+	margin: 5px auto;
+	text-align: center;
+	overflow: hidden;
+}
+.searchBar {
+	background-color: rgba(0,0,0,0);
+	width: 600px;
+	height: 40px;
+	margin: 0 auto;
+	outline: 0;
+	transition: all 1s;
+	border-style: none;
+	text-align: left;
+}
+.searchBar:Hover {
+	background-color: rgba(0,0,0,0.1);
+	transition: all 1s;
+}
+.searchBar:focus {
+	background-color: rgba(0,0,0,0.3);
+	transition: all 1s
+}
+.searchForm {
+	width: 600px;
+	float: left;
+}
+#reload {
+	width: 40px;
+	height: 40px;
+
+	float: right;
+}
+#music {
+	width: 640px;
+	height: 360px;
+	margin: 5px auto;
+	background-color: rgba(15, 15, 15, 0.8);
+}
+#wrapper {
+	background-color: rgba(15, 15, 15, 0.8);
+	height: 126px;
+	width: 640px;
+	margin: 5px auto;
+	vertical-align: middle;
+}
+
+#twitch {
+	background-color: rgba(15, 15, 15, 0.8);
+	height: 0px;
+	width: 1600px;
+	margin: 5px auto;
+	vertical-align: middle;
+}
+
+#twitchGameplay {
+	background-color: rgba(15, 15, 15, 0.8);
+	height: 126px;
+	width: 640px;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+#gog {
+	/*height: 126px;*/
+	width: 1000px;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+#gogbox {
+	color: rgba(170,170,170,1);
+	font-family: 'Lato';
+
+	background-color: rgba(15, 15, 15, 0.8);
+	width: 1000px;
+	min-height: 156px;
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
+#gogPicture {
+	float: left;
+}
+
+#gogText {
+	float: left;
+	margin: 23px;
+	max-width: 735px;
+}
+
+#gogTitle {
+	margin-bottom: 23px;
+	width: 700px;
+}
+
+#gogLinks {
+	word-wrap: break-word;
+	//width: 700px;
+}
+
+img {
+	float: left;
+	margin-left: 23px;
+	margin-top: 23px;
+}
+
+img.grey {
+	-webkit-filter: grayscale(1);
+}
+
+@media screen and (max-width: 1366px){
+	#music{display: none;}
+}
+@media screen and (max-width: 1080px){
+	#head{display: none;}
+}
+input {
+	padding-left: 10px;
+	font-size: 20px;
+	color: white;
+}
+input[type=text] {
+	color: rgba(170,170,170,1);
+	font-family: 'Lato';
+}
+
+span{
+	font-size:104px;
+	color: rgba(170,170,170,1);
+	font-family: 'Lato';
+	font-weight: bold;
+}
+
+.tooltip {
+	color: rgba(170,170,170,1);
+	font-family: 'Lato';
+
+	float: left;
+	display: block;
+	background-color: rgba(15, 15, 15, 0.8);
+	z-index: 999;
+
+    width: 366px;
+    height: 321px;
+	padding: 10px;
+
+	word-wrap: break-word;
+}
