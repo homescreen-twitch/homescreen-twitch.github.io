@@ -6,7 +6,21 @@ var streams = null;
 var alternateStreams= [
     38009892, // rredfox_x
     263574013, // bastiigaming
-    29157943 // hc_dizee
+    29157943, // hc_dizee
+    76792680, // AstorPewPew
+    132793370, //TacolineTV
+    233429987, //mibbi
+    120184785, //chefkochx
+    137907801, //dekarldent
+    100164086, //nayuma
+    64756920, //gerrit
+    89896510, //jay_corner
+    99121518, //torrotourettetv
+    10665819, //hol1c
+    58301987,  //furkitv
+    107342590, //tamaaa
+    138490205, //cocobane
+    48865821 // staiy
 ];
 
 var streamsOnline = [];
