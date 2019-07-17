@@ -20,7 +20,9 @@ var alternateStreams= [
     58301987,  //furkitv
     107342590, //tamaaa
     138490205, //cocobane
-    48865821 // staiy
+    48865821, // staiy
+    92155465, //nyndolgg
+    120678931 //Hansenstreams
 ];
 
 var streamsOnline = [];
@@ -202,7 +204,7 @@ function UpdateStreamsResponse(twitchResp) {
             link.setAttribute('href', "twitch://http://www.twitch.tv/" + streamData['name']);
             var divbox = document.createElement('div');
             divbox.setAttribute('class', 'tooltip');
-            divbox.innerHTML = streamData['display_name'] + "<br />" + item['viewer_count'] + "<br /><br /><i>" + item['title'] + "</i><br /><img style=\"margin-bottom: 23px; float: bottom;\" src=\"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + streamData['name'].toLowerCase() + "-320x180.jpg?" + currentDate + "\">";
+            divbox.innerHTML = streamData['display_name'] + " - " + item['viewer_count'] + "<br /><i>" + item['title'] + "</i><br /><img style=\"margin-bottom: 23px; float: bottom;\" src=\"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + streamData['name'].toLowerCase() + "-320x180.jpg?" + currentDate + "\">";
 
             link.appendChild(divbox);
 
