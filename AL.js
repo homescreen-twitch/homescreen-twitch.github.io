@@ -24,7 +24,8 @@ var alternateStreams= [
     92155465, // nyndolgg
     120678931, // Hansenstreams
     68607947, // jaydenplys
-    139371321 // junioranitv
+    139371321, // junioranitv
+    162349882 // xxjockerjacky
 ];
 
 var streamsOnline = [];
