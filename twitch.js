@@ -124,6 +124,8 @@ function ShowNewNotification(image, display_name, name, content) {
 function LoadOptions() {
     window.Notification.requestPermission();
 
+    oauth = window.localStorage.getItem('oauth');
+
     streamsString = window.localStorage.getItem('streams').split(',');
     $.ajax({
         url: 'https://api.twitch.tv/helix/users?id=' + streamsString.join('&id='),
@@ -168,8 +170,6 @@ function LoadOptions() {
     if (bgresult && bgresult != "") {
         $("body").css("background-image", "url(" + bgresult + ")");
     }
-
-    oauth = window.localStorage.getItem('oauth');
 }
 
 
