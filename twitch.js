@@ -323,7 +323,8 @@ function UpdateGamesCache(newGames) {
                 resolve();
             },
             headers: {
-                'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+                'Authorization': 'Bearer ' + oauth,
+                'Client-ID': clientId
             },
         });
     });
