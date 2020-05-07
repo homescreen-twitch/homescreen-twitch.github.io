@@ -5,5 +5,4 @@ $(document).ready(function () {
     window.localStorage.setItem('oauth', arr['#access_token']);
 
     window.location = window.location.origin;
-
 });

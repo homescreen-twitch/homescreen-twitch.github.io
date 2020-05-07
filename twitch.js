@@ -13,7 +13,7 @@ var currentTooltip = null;
 var clockTimer = setInterval(() => { TimerTimeUpdate(); }, 1000);
 var streamTimer = setInterval(() => { UpdateStreams(); UpdateStreamsGameplay(); }, 60000);
 
-
+var oauth = "";
 
 Date.prototype.timeNow = function () {
     return ((this.getHours() < 10) ? "0" : "") + this.getHours() + ":" + ((this.getMinutes() < 10) ? "0" : "") + this.getMinutes() + ":" + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
@@ -165,6 +165,8 @@ function LoadOptions() {
     if (bgresult && bgresult != "") {
         $("body").css("background-image", "url(" + bgresult + ")");
     }
+
+    oauth = window.localStorage.getItem('oauth');
 }
 
 
@@ -177,7 +179,7 @@ function UpdateStreams() {
         dataType: 'json',
         success: UpdateStreamsResponse,
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Client-ID': '19zxsc0tdoskzsippzkn7dlr2xq9om'
         },
         gameplay: false
     });
@@ -191,7 +193,7 @@ function UpdateStreamsGameplay() {
         dataType: 'json',
         success: UpdateStreamsResponse,
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Client-ID': '19zxsc0tdoskzsippzkn7dlr2xq9om'
         },
         gameplay: true
     });
