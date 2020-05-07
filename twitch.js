@@ -14,6 +14,7 @@ var clockTimer = setInterval(() => { TimerTimeUpdate(); }, 1000);
 var streamTimer = setInterval(() => { UpdateStreams(); UpdateStreamsGameplay(); }, 60000);
 
 var oauth = "";
+var clientId = "19zxsc0tdoskzsippzkn7dlr2xq9om";
 
 Date.prototype.timeNow = function () {
     return ((this.getHours() < 10) ? "0" : "") + this.getHours() + ":" + ((this.getMinutes() < 10) ? "0" : "") + this.getMinutes() + ":" + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
@@ -136,7 +137,8 @@ function LoadOptions() {
             UpdateStreams();
         },
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Authorization': 'Bearer ' + oauth,
+            'Client-ID': clientId
         },
     });
 
@@ -153,7 +155,8 @@ function LoadOptions() {
             UpdateStreamsGameplay();
         },
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Authorization': 'Bearer ' + oauth,
+            'Client-ID': clientId
         },
     });
 
@@ -180,7 +183,7 @@ function UpdateStreams() {
         success: UpdateStreamsResponse,
         headers: {
             'Authorization': 'Bearer ' + oauth,
-            'Client-ID': '19zxsc0tdoskzsippzkn7dlr2xq9om'
+            'Client-ID': clientId
         },
         gameplay: false
     });
@@ -195,7 +198,7 @@ function UpdateStreamsGameplay() {
         success: UpdateStreamsResponse,
         headers: {
             'Authorization': 'Bearer ' + oauth,
-            'Client-ID': '19zxsc0tdoskzsippzkn7dlr2xq9om'
+            'Client-ID': clientId
         },
         gameplay: true
     });
