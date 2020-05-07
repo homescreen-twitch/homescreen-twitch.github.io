@@ -179,6 +179,7 @@ function UpdateStreams() {
         dataType: 'json',
         success: UpdateStreamsResponse,
         headers: {
+            'Authorization': 'Bearer ' + oauth,
             'Client-ID': '19zxsc0tdoskzsippzkn7dlr2xq9om'
         },
         gameplay: false
@@ -193,6 +194,7 @@ function UpdateStreamsGameplay() {
         dataType: 'json',
         success: UpdateStreamsResponse,
         headers: {
+            'Authorization': 'Bearer ' + oauth,
             'Client-ID': '19zxsc0tdoskzsippzkn7dlr2xq9om'
         },
         gameplay: true
