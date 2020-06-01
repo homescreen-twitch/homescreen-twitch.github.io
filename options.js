@@ -1,3 +1,6 @@
+var oauth = "";
+var clientId = "19zxsc0tdoskzsippzkn7dlr2xq9om";
+
 $(document).ready(function () {
     LoadOptions();
 
@@ -96,7 +99,8 @@ function AddStream(newStreams, gameplay) {
             }
         },
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Authorization': 'Bearer ' + oauth,
+            'Client-ID': clientId
         },
     });
 }
@@ -105,7 +109,11 @@ var streams = [];
 var streamsGameplay = [];
 
 function LoadOptions() {
-    //chrome.storage.local.get(['streams', 'streamsGameplay', '9gagCute', 'backgroundURL'], function (result) {
+
+    oauth = window.localStorage.getItem('oauth');
+    if (oauth == null) {
+        window.location = "https://id.twitch.tv/oauth2/authorize?client_id=19zxsc0tdoskzsippzkn7dlr2xq9om&redirect_uri=https%3A%2F%2Fhomescreen-twitch.github.io%2Foauth.html&response_type=token"
+    }
 
         streamsString = window.localStorage.getItem('streams').split(',');
         $.ajax({
@@ -124,7 +132,8 @@ function LoadOptions() {
 
             },
             headers: {
-                'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+                'Authorization': 'Bearer ' + oauth,
+                'Client-ID': clientId
             },
         });
 
@@ -145,7 +154,8 @@ function LoadOptions() {
 
             },
             headers: {
-                'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+                'Authorization': 'Bearer ' + oauth,
+                'Client-ID': clientId
             },
         });
 
@@ -158,12 +168,9 @@ function LoadOptions() {
             $('#backgroundURL').val(bgresult);
             $("body").css("background-image", "url(" + bgresult + ")");
         }
-    //});
 }
 
 function SaveStreams() {
-    //chrome.storage.local.set({ 'streams': streams });
-    //chrome.storage.local.set({ 'streamsGameplay': streamsGameplay });
     window.localStorage.setItem('streams', streams.toString());
     window.localStorage.setItem('streamsGameplay', streamsGameplay.toString());
 }
@@ -174,12 +181,9 @@ function ImportStreams(streams, gameplay) {
 }
 
 function ImportStreamIds(streamIds, gameplay) {
-    //var tmpStreams = streamIds.split(",");
     if (gameplay)
-        //chrome.storage.local.set({ 'streamsGameplay': tmpStreams });
         window.localStorage.setItem('streamsGameplay', streamIds);
     else
-        //chrome.storage.local.set({ 'streams': tmpStreams });
         window.localStorage.setItem('streams', streamIds);
 
     LoadOptions();
