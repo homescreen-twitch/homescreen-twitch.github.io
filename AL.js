@@ -11,16 +11,13 @@ var alternateStreams= [
     132793370, // TacolineTV
     233429987, // mibbi
     120184785, // chefkochx
-    137907801, // dekarldent
     100164086, // nayuma
     64756920, // gerrit
     89896510, // jay_corner
     99121518, // torrotourettetv
     10665819, // hol1c
     58301987,  // furkitv
-    107342590, // tamaaa
     138490205, // cocobane
-    48865821, // staiy
     92155465, // nyndolgg
     120678931, // Hansenstreams
     68607947, // jaydenplys
@@ -34,6 +31,9 @@ var currentDate = Date.now();
 var currentTooltip = null;
 
 var streamTimer = setInterval(() => { UpdateStreams(); }, 60000);
+
+var oauth = "";
+var clientId = "19zxsc0tdoskzsippzkn7dlr2xq9om";
 
 window.onblur = function () {
     HideTooltip();
@@ -117,6 +117,12 @@ function ShowNewNotification(image, display_name, name, content) {
 
 
 function LoadOptions() {
+
+    oauth = window.localStorage.getItem('oauth');
+    if (oauth == null) {
+        window.location = "https://id.twitch.tv/oauth2/authorize?client_id=19zxsc0tdoskzsippzkn7dlr2xq9om&redirect_uri=https%3A%2F%2Fhomescreen-twitch.github.io%2Foauth.html&response_type=token"
+    }
+
     window.Notification.requestPermission();
 
     streamsString = alternateStreams;
@@ -132,7 +138,8 @@ function LoadOptions() {
             UpdateStreams();
         },
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Authorization': 'Bearer ' + oauth,
+            'Client-ID': clientId
         },
     });
 
@@ -153,7 +160,8 @@ function UpdateStreams() {
         dataType: 'json',
         success: UpdateStreamsResponse,
         headers: {
-            'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+            'Authorization': 'Bearer ' + oauth,
+            'Client-ID': clientId
         },
         gameplay: false
     });
@@ -267,7 +275,8 @@ function UpdateGamesCache(newGames) {
                 resolve();
             },
             headers: {
-                'Client-ID': 'jzkbprff40iqj646a697cyrvl0zt2m6'
+                'Authorization': 'Bearer ' + oauth,
+                'Client-ID': clientId
             },
         });
     });
