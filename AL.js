@@ -6,7 +6,6 @@ var streams = null;
 var alternateStreams= [
     38009892, // rredfox_x
     263574013, // bastiigaming
-    29157943, // hc_dizee
     76792680, // AstorPewPew
     132793370, // TacolineTV
     233429987, // mibbi
