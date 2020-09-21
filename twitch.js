@@ -342,5 +342,5 @@ function UpdateGamesCache(newGames) {
 }
 
 function OpenStream(streamname) {
-    var myWindow = window.open("https://player.twitch.tv/?channel=" + streamname + "&parent=twitch.tv", "_blank", "width=400,height=400,menubar=no,scrollbars=no,status=no,titlebar=no");
+    var myWindow = window.open("https://player.twitch.tv/?channel=" + streamname + "&parent=twitch.tv", "_blank", "width=1489,height=839,menubar=no,scrollbars=no,status=no,titlebar=no,toolbar=no,scrollbars=no,location=no");
 }
