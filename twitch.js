@@ -256,8 +256,8 @@ function UpdateStreamsResponse(twitchResp) {
 
             tmpNames.push(id);
 
-            var link = document.createElement("a");
-            link.setAttribute('href', "twitch://http://www.twitch.tv/" + streamData['name']);
+            //var link = document.createElement("a");
+            //link.setAttribute('href', "twitch://http://www.twitch.tv/" + streamData['name']);
 
 
             var linkIMG = document.createElement("img");
@@ -271,8 +271,12 @@ function UpdateStreamsResponse(twitchResp) {
             });
             linkIMG.addEventListener('mouseout', HideTooltip);
 
-            link.appendChild(linkIMG);
-            wrapperDiv.appendChild(link);
+            linkIMG.onclick = function() { OpenStream(streamData['name']); };
+
+            //link.appendChild(linkIMG);
+            //wrapperDiv.appendChild(link);
+            wrapperDiv.appendChild(linkIMG);
+
         });
 
         var gamesPromise = UpdateGamesCache(newGames);
@@ -335,4 +339,8 @@ function UpdateGamesCache(newGames) {
     });
 
     return p1;
+}
+
+function OpenStream(streamname) {
+    alert(streamname);
 }
