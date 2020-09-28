@@ -21,7 +21,7 @@ function startFocusOut() {
 $(document).on("click", "#cntitems > li",function(){
     switch ($(this).text()) {
         case "Chat":
-            var myWindow = window.open("https://www.twitch.tv/popout/" + rtmuser + "/chat?popout=", "_blank", "width=400,height=90,menubar=no,scrollbars=no,status=no,titlebar=no,toolbar=no,scrollbars=no,location=no");
+            var myWindow = window.open("https://www.twitch.tv/popout/" + rtmuser + "/chat?popout=", "_blank", "width=400,height=900,menubar=no,scrollbars=no,status=no,titlebar=no,toolbar=no,scrollbars=no,location=no");
             break;
         case "Twitch Seite":
             var myWindow = window.open("https://www.twitch.tv/" + rtmuser, "_blank", "");
