@@ -23,7 +23,7 @@ $(document).on("click", "#cntitems > li",function(){
         case "Chat":
             var myWindow = window.open("https://www.twitch.tv/popout/" + rtmuser + "/chat?popout=", "_blank", "width=400,height=900,menubar=no,scrollbars=no,status=no,titlebar=no,toolbar=no,scrollbars=no,location=no");
             break;
-        case "Twitch Seite":
+        case "Twitch-Seite":
             var myWindow = window.open("https://www.twitch.tv/" + rtmuser, "_blank", "");
             break;
     }
