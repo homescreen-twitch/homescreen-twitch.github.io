@@ -208,7 +208,7 @@ span{
 	padding-right:10px;
 	padding-bottom:3px;
 	font-size:17px;
-	color: #333333;
+	color: rgba(170,170,170,1);
 	
   }
   hr { width: 85%; 
@@ -217,12 +217,11 @@ span{
 	  color:#E4E4E4;
   }
   #cntnr{
+	z-index: 1000;
 	display:none;
 	position:fixed;
-	border:1px solid #B2B2B2;
-	width:150px;      background:#F9F9F9;
-	box-shadow: 3px 3px 2px #E9E9E9;
-	border-radius:4px;
+	width:150px;
+	background:rgba(15, 15, 15, 0.8);
   }
   
   li{
