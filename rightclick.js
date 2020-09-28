@@ -14,7 +14,7 @@ $(document).bind("contextmenu",function(e){
 function startFocusOut() {
     $(document).on("click",function(){
     $("#cntnr").hide();        
-    $(document).off("click");
+    //$(document).off("click");
     });
 }
     
