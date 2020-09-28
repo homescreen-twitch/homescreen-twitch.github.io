@@ -16,5 +16,5 @@ function startFocusOut() {
 }
     
 $("#cntitems > li").click(function(){
-    $("#op").text("You have selected "+$(this).text());
+    console.log("You have selected "+$(this).text());
 });
