@@ -1,10 +1,13 @@
+var rtmuser;
+
 $(document).bind("contextmenu",function(e){
     if ($(e.target).prop("class") == "grey") {
-      e.preventDefault();
-      $("#cntnr").css("left",e.pageX);
-      $("#cntnr").css("top",e.pageY);
-     // $("#cntnr").hide(100);        
-      $("#cntnr").fadeIn(200,startFocusOut());   
+        rtmuser = $(e.target).prop("data-streamer");
+
+        e.preventDefault();
+        $("#cntnr").css("left",e.pageX);
+        $("#cntnr").css("top",e.pageY);        
+        $("#cntnr").fadeIn(200,startFocusOut());   
     }   
 });
     
@@ -16,5 +19,5 @@ function startFocusOut() {
 }
     
 $(document).on("click", "#cntitems > li",function(){
-    console.log("You have selected "+$(this).text());
+    console.log("You have selected "+$(this).text() + " " + rtmuser);
 });

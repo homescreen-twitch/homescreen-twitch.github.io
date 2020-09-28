@@ -261,6 +261,7 @@ function UpdateStreamsResponse(twitchResp) {
 
 
             var linkIMG = document.createElement("img");
+            linkIMG.setAttribute('data-streamer', streamData['name']);
             linkIMG.setAttribute('class', 'grey');
             linkIMG.setAttribute('src', streamData['image']);
             linkIMG.setAttribute('height', 80);
