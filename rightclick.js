@@ -2,7 +2,7 @@ var rtmuser;
 
 $(document).bind("contextmenu",function(e){
     if ($(e.target).prop("class") == "grey") {
-        rtmuser = $(e.target).prop("data-streamer");
+        rtmuser = $(e.target).data("streamer");
 
         e.preventDefault();
         $("#cntnr").css("left",e.pageX);
