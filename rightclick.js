@@ -1,4 +1,4 @@
-$("#grey").bind("contextmenu",function(e){
+$(document).bind("contextmenu",function(e){
     e.preventDefault();
     console.log(e.pageX + "," + e.pageY);
     $("#cntnr").css("left",e.pageX);
