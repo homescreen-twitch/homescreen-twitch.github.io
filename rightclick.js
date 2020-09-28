@@ -15,6 +15,6 @@ function startFocusOut() {
     });
 }
     
-$("#cntitems > li").click(function(){
+$(document).on("click", "#cntitems > li",function(){
     console.log("You have selected "+$(this).text());
 });
