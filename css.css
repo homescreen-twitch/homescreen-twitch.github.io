@@ -147,7 +147,7 @@ iframe:hover {
 
 #gogLinks {
 	word-wrap: break-word;
-	//width: 700px;
+	/*width: 700px;*/
 }
 
 img {
@@ -232,7 +232,7 @@ span{
   }
   
   
-  #items :hover{
+  #cntitems :hover{
 	 color: white;
 	background:#284570;
 	border-radius:2px;
