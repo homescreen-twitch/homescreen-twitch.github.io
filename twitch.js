@@ -141,10 +141,11 @@ function LoadOptions() {
 
             UpdateStreams();
         },
-        fail: function(response) {
-            window.localStorage.removeItem('oauth');
-            window.location = "https://id.twitch.tv/oauth2/authorize?client_id=19zxsc0tdoskzsippzkn7dlr2xq9om&redirect_uri=https%3A%2F%2Fhomescreen-twitch.github.io%2Foauth.html&response_type=token"
-
+        statusCode: {
+            401: function() {
+                window.localStorage.removeItem('oauth');
+                window.location = "https://id.twitch.tv/oauth2/authorize?client_id=19zxsc0tdoskzsippzkn7dlr2xq9om&redirect_uri=https%3A%2F%2Fhomescreen-twitch.github.io%2Foauth.html&response_type=token"
+            }
         },
         headers: {
             'Authorization': 'Bearer ' + oauth,
