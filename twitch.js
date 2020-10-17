@@ -294,17 +294,16 @@ function UpdateStreamsResponse(twitchResp) {
                         streamData = requestStreams[item];
                         ShowNewNotification(streamData['image'], streamData['display_name'], streamData['name'], typeof gamesCache[item['game_id']] == 'undefined' ? item['game_id'] : gamesCache[item['game_id']]);
                     }
- 
-
                 }
             });
+
+
+            if (gameplay == false) {
+                streamsOnline = tmpNames;
+            }
         });
 
         wrapper.appendChild(wrapperDiv);
-
-        if (gameplay == false) {
-            streamsOnline = tmpNames;
-        }
 
 
         if (wrapper.children.length != 0) {
