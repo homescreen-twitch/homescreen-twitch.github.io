@@ -99,7 +99,6 @@ function HideTooltip() {
 
 
 function ShowNewNotification(image, display_name, name, content) {
-    return;
     
     new Notification(display_name, {
         body: content,
@@ -122,7 +121,7 @@ function ShowNewNotification(image, display_name, name, content) {
 
 
 function LoadOptions() {
-    window.Notification.requestPermission();
+    Notification.requestPermission();
 
     oauth = window.localStorage.getItem('oauth');
     if (oauth == null) {
