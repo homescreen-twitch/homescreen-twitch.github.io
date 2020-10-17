@@ -285,13 +285,16 @@ function UpdateStreamsResponse(twitchResp) {
             var streamData = null;
 
             $.each(tmpNames, function (x, item) {
-                if (streamsOnline.indexOf(item) == -1) {
+                if (!streamsOnline.includes(item)) {
                     //new stream, display notification
                     if (gameplay == true)
                         streamData = requestStreamsGameplay[item];
                     else
+                    {
                         streamData = requestStreams[item];
-                    ShowNewNotification(streamData['image'], streamData['display_name'], streamData['name'], typeof gamesCache[item['game_id']] == 'undefined' ? item['game_id'] : gamesCache[item['game_id']]);
+                        ShowNewNotification(streamData['image'], streamData['display_name'], streamData['name'], typeof gamesCache[item['game_id']] == 'undefined' ? item['game_id'] : gamesCache[item['game_id']]);
+                    }
+ 
 
                 }
             });
