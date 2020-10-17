@@ -285,7 +285,7 @@ function UpdateStreamsResponse(twitchResp) {
             var streamData = null;
 
             $.each(tmpNames, function (x, item) {
-                if (!streamsOnline.includes(item)) {
+                if (streamsOnline.includes(item) == false) {
                     //new stream, display notification
                     if (gameplay == true)
                         streamData = requestStreamsGameplay[item];
