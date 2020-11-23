@@ -1,4 +1,47 @@
 <html>
+  <head>
+    <style>
+      .twitch .twitch-video {
+  padding-top: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.twitch .twitch-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.twitch .twitch-chat {
+  height: 400px;
+}
+
+.twitch .twitch-chat iframe {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 850px) {
+  .twitch {
+    position: relative;
+  }
+  
+  .twitch .twitch-video {
+    width: 75%;
+    padding-top: 42.1875%;
+  }
+
+  .twitch .twitch-chat {
+    width: 25%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+    </style>
+  </head>
     <body>
       <div class="twitch">
           <div class="twitch-chat">
@@ -7,17 +50,17 @@
               scrolling="no"
               src="https://www.twitch.tv/embed/yogscast/chat?parent=homescreen-twitch.github.io"
               height="100%"
-              width="15%">
+              width="100%">
             </iframe>
           </div>
         <div class="twitch-video">
           <iframe
-            src="https://player.twitch.tv/?channel=yogscast&parent=homescreen-twitch.github.io&autoplay=false"
+            src="https://player.twitch.tv/?channel=yogscast&parent=homescreen-twitch.github.io&autoplay=true"
             frameborder="0"
             scrolling="no"
             allowfullscreen="true"
             height="100%"
-            width="85%">
+            width="100%">
           </iframe>
         </div>
       </div>
