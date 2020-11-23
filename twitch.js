@@ -104,18 +104,6 @@ function ShowNewNotification(image, display_name, name, content) {
         body: content,
         icon: image
       });
-    /*
-    chrome.notifications.create(name, {
-        type: 'basic',
-        iconUrl: image,
-        title: display_name,
-        message: content
-    }, function (notificationId) {
-        setTimeout(() => {
-            chrome.notifications.clear(notificationId, null);
-        }, 3000);
-    });
-    */
 }
 
 
